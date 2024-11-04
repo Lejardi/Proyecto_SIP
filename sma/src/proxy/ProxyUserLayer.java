@@ -48,8 +48,8 @@ public class ProxyUserLayer {
 		//MODIFICACIONES
 		inviteMessage.setcSeqNumber(String.valueOf(Integer.parseInt(inviteMessage.getcSeqNumber())+1));
 		inviteMessage.setMaxForwards(inviteMessage.getMaxForwards()-1);
-		// inviteMessage.addVia((FindMyIPv4.findMyIPv4Address().getHostAddress() + ":" + ));
-
+		inviteMessage.addVia((FindMyIPv4.findMyIPv4Address().getHostAddress() + ":" + originParts[1]));
+		// Para la Via he metido el originPort porque los dos usan el mismo puerto en el Run Configuration, pero no se si está bien
 		
 		if ( destino.equals(null)) 
 		{
